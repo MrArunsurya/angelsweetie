@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Happy Birthday Angel & Sweetie — The Film</title>
+<title>Happy Birthday Angel & Sweetie/title>
 <meta name="theme-color" content="#050508">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -32,7 +32,41 @@ section{position:relative}.screen{min-height:100svh;height:100svh;display:grid;p
 .audio{position:fixed;right:18px;bottom:18px;z-index:1000;border:1px solid #e6bd7255;background:linear-gradient(160deg,#3a1024cc,#0c0710cc);color:var(--gold-soft);border-radius:50%;width:48px;height:48px;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 10px 30px #0007}.audio span{font-size:18px}
 #mouse{position:fixed;width:18px;height:18px;border:1px solid var(--gold-soft);border-radius:50%;z-index:1001;pointer-events:none;mix-blend-mode:difference;transform:translate(-50%,-50%);display:none}
 footer{padding:28px 8vw;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.15em;color:#8a7d70;background:var(--bg)}
-@media(pointer:fine){#mouse{display:block}}@media(max-width:760px){.intro-grid{grid-template-columns:1fr;gap:35px}.story-copy{left:7vw;right:7vw}.floating{width:105px}.f1{right:6%;top:12%}.f2{right:16%;bottom:12%}.f3{display:none}.rail{right:4vw}.photo-card{flex-basis:75vw;height:62svh}.mem-head{display:block}.mem-note{margin-top:24px}.hero h1{font-size:clamp(62px,18vw,105px)}.final h2{font-size:clamp(58px,17vw,100px)}.song-disc{width:110px;height:110px}}
+@media(pointer:fine){#mouse{display:block}}@media(max-width:760px){
+.intro-grid{grid-template-columns:1fr;gap:35px}
+.story-copy{left:7vw;right:7vw}
+.floating{width:105px}.f1{right:6%;top:12%}.f2{right:16%;bottom:12%}.f3{display:none}.rail{right:4vw}
+.memories{padding-top:18vw}
+.mem-head{display:block;padding:0 7vw}.mem-note{margin-top:24px}
+.film{height:auto!important;padding:34px 0 70px}
+.track{
+ position:relative!important;top:auto!important;left:auto!important;
+ height:auto!important;min-height:0!important;
+ width:100%;display:flex;align-items:center;
+ gap:22px;padding:35px 7vw 55px;
+ overflow-x:auto!important;overflow-y:hidden!important;
+ -webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
+ overscroll-behavior-x:contain;touch-action:pan-x;
+ scrollbar-width:none;
+}
+.track::-webkit-scrollbar{display:none}
+.photo-card{
+ flex:0 0 84vw!important;width:84vw;min-width:84vw;
+ height:68svh!important;min-height:430px;max-height:650px;
+ padding:10px 10px 62px;margin:0;
+ scroll-snap-align:center;scroll-snap-stop:always;
+ transform:rotate(0deg);
+}
+.photo-card img{
+ width:100%;height:100%;min-height:0;
+ object-fit:contain!important;object-position:center;
+ background:#e9e0d5;
+}
+.photo-card figcaption{font-size:17px;line-height:1.25}
+.hero h1{font-size:clamp(62px,18vw,105px)}
+.final h2{font-size:clamp(58px,17vw,100px)}
+.song-disc{width:110px;height:110px}
+}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}.story,.film{height:auto}.story-sticky,.track{position:relative;height:auto}.track{overflow-x:auto;padding:60px 7vw}.photo-card{flex-basis:75vw}}
 </style>
 <style>.music-toggle{position:fixed;right:20px;bottom:20px;z-index:9999;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.55);color:#fff;backdrop-filter:blur(12px);cursor:pointer;font-size:19px}.music-toggle.muted{opacity:.55}</style></head>
@@ -62,7 +96,7 @@ footer{padding:28px 8vw;display:flex;justify-content:space-between;font-size:10p
 <div class="rail" id="rail"><b class="on"></b><b></b><b></b><b></b><b></b><b></b></div>
 </div></section>
 
-<section class="memories"><div class="mem-head"><div><div class="micro">The memory reel</div><h2 class="section-title">Frames we kept.</h2></div><div class="mem-note">On desktop, the reel moves sideways as you scroll. On mobile, simply swipe the photographs.</div></div>
+<section class="memories"><div class="mem-head"><div><div class="micro">The memory reel</div><h2 class="section-title">Frames we kept.</h2></div><div class="mem-note">On desktop, the reel moves sideways as you scroll. On mobile, swipe left/right to view every photograph.</div></div>
 <div class="film"><div class="track" id="track">
 <figure class="photo-card r1"><img src="assets/2020.jpg"><figcaption>2020 — the beginning</figcaption></figure>
 <figure class="photo-card r2"><img src="assets/2023.jpg"><figcaption>2023 — still collecting moments</figcaption></figure>
@@ -127,6 +161,7 @@ gsap.to(".f2",{y:120,rotation:-13,ease:"none",scrollTrigger:{trigger:".story",st
 const track=$("#track");
 function dist(){return Math.max(0,track.scrollWidth-innerWidth+innerWidth*.16)}
 if(!isTouch)gsap.to(track,{x:()=>-dist(),ease:"none",scrollTrigger:{trigger:".film",start:"top top",end:"bottom bottom",scrub:1,invalidateOnRefresh:true}});
+else { window.addEventListener("load",()=>{ track.style.transform="none"; ScrollTrigger.getAll().forEach(st=>{ if(st.trigger===document.querySelector(".film")) st.kill(); }); }); }
 gsap.from(".quote-inner",{y:80,opacity:0,scale:.96,scrollTrigger:{trigger:".quote",start:"top 75%",end:"center center",scrub:1}});
 gsap.from(".song-inner",{y:60,opacity:0,scale:.96,scrollTrigger:{trigger:".song",start:"top 75%",end:"center center",scrub:1}});
 
