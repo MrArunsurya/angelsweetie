@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Happy Birthday Angel & Sweetie — The Film</title>
+<meta name="theme-color" content="#050508">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<style>
+:root{--bg:#0c0710;--wine:#3a1024;--wine-deep:#180611;--teal:#05171b;--teal-deep:#020d10;--amber:#4a2408;--fg:#f7f1e9;--muted:#b9ab9f;--gold:#e6bd72;--gold-soft:#f2ddab;--pink:#ef9eaf}
+*{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;background:radial-gradient(ellipse 120% 90% at 50% 0%,#22101d 0%,var(--bg) 55%,#080509 100%);color:var(--fg);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");mix-blend-mode:screen;opacity:.7}
+section{position:relative}.screen{min-height:100svh;height:100svh;display:grid;place-items:center;overflow:hidden}
+.hero{background:radial-gradient(circle at 50% 28%,var(--wine) 0%,var(--wine-deep) 48%,#0a0509 100%)}.hero-photo{position:absolute;inset:-7%;background:url("assets/hero.jpg") center/cover no-repeat;filter:brightness(.62) saturate(1.08) sepia(.08) hue-rotate(-8deg);will-change:transform}
+.hero-photo:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,transparent 0,rgba(58,16,36,.2) 35%,rgba(12,7,10,.78) 100%),linear-gradient(180deg,rgba(58,16,36,.18),var(--bg))}
+.end-photo:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,transparent 0,rgba(74,36,8,.22) 35%,rgba(12,8,5,.8) 100%),linear-gradient(180deg,rgba(74,36,8,.18),#0e0904)}
+.hero-content{text-align:center;position:relative;z-index:3;width:min(1200px,90vw)}.micro{text-transform:uppercase;letter-spacing:.32em;font-size:10px;color:var(--gold)}
+.hero h1,.final h2{font-family:"Playfair Display",serif;font-weight:600;letter-spacing:-.065em;line-height:.83;margin:28px 0}
+.hero h1{font-size:clamp(68px,14vw,190px)}.hero h1 span{display:block}.hero h1 .italic{background:linear-gradient(100deg,var(--gold-soft),var(--gold) 40%,var(--pink) 85%);-webkit-background-clip:text;background-clip:text;color:transparent}.italic{font-style:italic}.hero p{font-size:clamp(15px,2vw,20px);color:#e3d9d0;line-height:1.7;max-width:650px;margin:35px auto 0}
+.scroll{position:absolute;bottom:28px;z-index:4;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-soft)}.scroll i{display:block;width:1px;height:50px;background:linear-gradient(var(--gold),transparent);margin:12px auto 0;animation:line 1.5s infinite}@keyframes line{50%{transform:scaleY(.35);transform-origin:top;opacity:.3}}
+.intro{min-height:100svh;padding:12vw 8vw;display:grid;place-items:center;background:linear-gradient(180deg,var(--bg),#100a15 55%,var(--bg))}.intro-grid{width:min(1250px,100%);display:grid;grid-template-columns:.8fr 1.2fr;gap:9vw;align-items:end}.intro h2,.section-title{font:500 clamp(48px,7.5vw,112px)/.92 "Playfair Display",serif;letter-spacing:-.05em;margin:15px 0}.lead{font-size:clamp(20px,3vw,34px);line-height:1.28;color:#dccfc4}.lead em{font-family:"Playfair Display",serif;color:var(--gold-soft)}
+.story{height:500vh}.story-sticky{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--teal-deep)}.story-image{position:absolute;inset:-5%;background:url("assets/hero1.jpg") center/cover no-repeat;filter:brightness(.58) saturate(.92) hue-rotate(4deg)}.story-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,23,27,.94),rgba(5,23,27,.15) 70%),linear-gradient(0deg,rgba(5,23,27,.6),transparent)}
+.story-copy{position:absolute;z-index:2;left:8vw;top:50%;transform:translateY(-50%);max-width:680px}.chapter{color:var(--gold);letter-spacing:.25em;text-transform:uppercase;font-size:10px}.year{font:500 clamp(85px,14vw,185px)/.75 "Playfair Display",serif;margin:20px 0;background:linear-gradient(120deg,var(--gold-soft),var(--gold) 55%,#c98f9e);-webkit-background-clip:text;background-clip:text;color:transparent}.story-copy h3{font:500 clamp(32px,5vw,72px)/1 "Playfair Display",serif;margin:0 0 20px;color:var(--fg)}.story-copy p{font-size:17px;line-height:1.75;color:#c9d6d4;max-width:560px}.rail{position:absolute;right:5vw;top:50%;transform:translateY(-50%);z-index:4}.rail b{display:block;width:6px;height:6px;border:1px solid var(--gold-soft);border-radius:50%;margin:16px 0;opacity:.4}.rail b.on{background:var(--gold);opacity:1;box-shadow:0 0 18px var(--gold)}
+.floating{position:absolute;z-index:3;width:clamp(100px,13vw,190px);aspect-ratio:4/5;padding:8px;background:linear-gradient(160deg,#fbf3e4,#efe2c8);box-shadow:0 25px 80px #00000066,0 0 0 1px #e6bd7233;opacity:.92}.floating img{width:100%;height:100%;object-fit:cover}.f1{right:12%;top:18%;transform:rotate(7deg)}.f2{right:25%;bottom:14%;transform:rotate(-7deg)}.f3{right:5%;bottom:24%;transform:rotate(2deg)}
+.memories{background:linear-gradient(180deg,#f4ecdf,#efe4d2);color:#241a14;padding:12vw 0 0}.mem-head{padding:0 8vw;display:flex;justify-content:space-between;gap:30px;align-items:end}.mem-head .section-title{color:#241a14}.mem-note{max-width:350px;color:#7a6a58;line-height:1.6}.film{height:260vh}.track{height:100svh;position:sticky;top:0;display:flex;align-items:center;gap:5vw;padding:0 8vw;overflow:hidden}.photo-card{flex:0 0 min(39vw,520px);height:min(68vh,690px);background:#fffaf0;padding:12px 12px 62px;box-shadow:0 30px 70px #0000001a,0 0 0 1px #c9a45e22;transform:rotate(var(--r))}.photo-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:1px}.photo-card figcaption{font:20px "Playfair Display",serif;padding:12px 5px 0;color:#3a2a1c}.r1{--r:-3deg}.r2{--r:4deg}.r3{--r:-2deg}.r4{--r:3deg}.r5{--r:-4deg}.r6{--r:2deg}
+.quote{min-height:100svh;display:grid;place-items:center;text-align:center;padding:10vw 8vw;background:radial-gradient(circle at 50% 25%,var(--wine) 0%,var(--wine-deep) 45%,var(--bg) 100%)}.quote-inner{max-width:1150px}.quote-mark{font:150px "Playfair Display",serif;color:var(--gold);line-height:.2}.quote h2{font:500 clamp(44px,7vw,100px)/1.02 "Playfair Display",serif;letter-spacing:-.04em;color:var(--fg)}.quote p{color:var(--muted);letter-spacing:.06em}
+.song{min-height:70svh;display:grid;place-items:center;text-align:center;padding:10vw 8vw;background:radial-gradient(circle at 50% 30%,var(--teal) 0%,var(--teal-deep) 55%,var(--bg) 100%)}.song-inner{max-width:640px;display:flex;flex-direction:column;align-items:center;gap:22px}.song-disc{width:150px;height:150px;border-radius:50%;background:conic-gradient(from 0deg,var(--gold) 0deg,#7a4a1e 90deg,var(--gold) 180deg,#7a4a1e 270deg,var(--gold) 360deg);display:grid;place-items:center;box-shadow:0 25px 60px #0009;animation:spin 9s linear infinite}.song-disc i{width:26px;height:26px;border-radius:50%;background:var(--teal-deep);border:2px solid var(--gold-soft)}@keyframes spin{to{transform:rotate(360deg)}}.song-tamil{font-family:"Playfair Display",serif;font-size:clamp(30px,5vw,54px);color:var(--gold-soft)}.song-en{color:var(--muted);letter-spacing:.08em;font-size:14px;text-transform:uppercase}.song-links{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:6px}.song-btn{border:1px solid #e6bd7266;background:#e6bd7214;color:var(--gold-soft);padding:13px 26px;border-radius:100px;font:inherit;font-size:14px;cursor:pointer;text-decoration:none;backdrop-filter:blur(10px);transition:background .3s,transform .3s}.song-btn:hover{background:#e6bd7228;transform:translateY(-2px)}.song-note{color:#8f8378;font-size:12px;max-width:420px;line-height:1.6}
+.end{height:100svh}.end-photo{position:absolute;inset:-6%;background:url("assets/2026.jpg") center/cover no-repeat;filter:brightness(.6) saturate(1.05) sepia(.1)}.final{text-align:center;position:relative;z-index:2;width:min(1200px,92vw)}.final h2{font-size:clamp(65px,13vw,175px)}.final h2 .italic{background:linear-gradient(100deg,var(--gold-soft),var(--pink) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}.final h2 small{display:block;font:600 clamp(20px,3vw,38px)/1 "DM Sans";letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}.final p{max-width:650px;margin:auto;color:#e6d9cd;font-size:18px;line-height:1.7}.heart{color:var(--pink);display:inline-block;animation:beat 1.1s infinite}@keyframes beat{50%{transform:scale(1.2)}}.surprise{margin-top:30px;border:1px solid #e6bd7266;background:linear-gradient(120deg,#e6bd7222,#ef9eaf1a);color:var(--gold-soft);padding:14px 26px;border-radius:100px;font:inherit;cursor:pointer;backdrop-filter:blur(12px)}
+.audio{position:fixed;right:18px;bottom:18px;z-index:1000;border:1px solid #e6bd7255;background:linear-gradient(160deg,#3a1024cc,#0c0710cc);color:var(--gold-soft);border-radius:50%;width:48px;height:48px;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 10px 30px #0007}.audio span{font-size:18px}
+#mouse{position:fixed;width:18px;height:18px;border:1px solid var(--gold-soft);border-radius:50%;z-index:1001;pointer-events:none;mix-blend-mode:difference;transform:translate(-50%,-50%);display:none}
+footer{padding:28px 8vw;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.15em;color:#8a7d70;background:var(--bg)}
+@media(pointer:fine){#mouse{display:block}}@media(max-width:760px){.intro-grid{grid-template-columns:1fr;gap:35px}.story-copy{left:7vw;right:7vw}.floating{width:105px}.f1{right:6%;top:12%}.f2{right:16%;bottom:12%}.f3{display:none}.rail{right:4vw}.photo-card{flex-basis:75vw;height:62svh}.mem-head{display:block}.mem-note{margin-top:24px}.hero h1{font-size:clamp(62px,18vw,105px)}.final h2{font-size:clamp(58px,17vw,100px)}.song-disc{width:110px;height:110px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}.story,.film{height:auto}.story-sticky,.track{position:relative;height:auto}.track{overflow-x:auto;padding:60px 7vw}.photo-card{flex-basis:75vw}}
+</style>
+<style>.music-toggle{position:fixed;right:20px;bottom:20px;z-index:9999;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.55);color:#fff;backdrop-filter:blur(12px);cursor:pointer;font-size:19px}.music-toggle.muted{opacity:.55}</style></head>
+<body>
+<!-- Birthday music: assets/song.mp3 -->
+<audio id="birthdaySong" src="assets/song.mp3" preload="auto" loop playsinline></audio>
+<button id="musicToggle" class="music-toggle" aria-label="Mute birthday song">♫</button>
+<div id="mouse"></div><button class="audio" id="audio" aria-label="Play birthday music"><span>♫</span></button>
+
+<section class="screen hero">
+<div class="hero-photo" id="heroPhoto"></div><div class="hero-content">
+<div class="micro">A cinematic birthday story</div>
+<h1><span>Happy Birthday</span><span class="italic">Angel & Sweetie.</span></h1>
+<p>Turn the screen up. Take your time. Every scroll reveals another little piece of the story.</p>
+</div><div class="scroll">Scroll to begin<i></i></div>
+</section>
+
+<section class="intro"><div class="intro-grid">
+<div><div class="micro">The archive · 2020—2026</div><h2>Not a card.<br>A little film.</h2></div>
+<div class="lead">Years become <em>memories</em>. Memories become photographs. And photographs become a story you can keep coming back to.</div>
+</div></section>
+
+<section class="story"><div class="story-sticky">
+<div class="story-image" id="storyImage"></div>
+<figure class="floating f1"><img src="assets/2023.jpg"></figure><figure class="floating f2"><img src="assets/2024.jpg"></figure><figure class="floating f3"><img src="assets/2025.jpg"></figure>
+<div class="story-copy"><div class="chapter">Chapter <span id="chapter">01</span></div><div class="year" id="year">2020</div><h3 id="storyTitle">Where it all began.</h3><p id="storyText">The first year. The first photographs. The beginning of a story that had no idea how far it would travel.</p></div>
+<div class="rail" id="rail"><b class="on"></b><b></b><b></b><b></b><b></b><b></b></div>
+</div></section>
+
+<section class="memories"><div class="mem-head"><div><div class="micro">The memory reel</div><h2 class="section-title">Frames we kept.</h2></div><div class="mem-note">On desktop, the reel moves sideways as you scroll. On mobile, simply swipe the photographs.</div></div>
+<div class="film"><div class="track" id="track">
+<figure class="photo-card r1"><img src="assets/2020.jpg"><figcaption>2020 — the beginning</figcaption></figure>
+<figure class="photo-card r2"><img src="assets/2023.jpg"><figcaption>2023 — still collecting moments</figcaption></figure>
+<figure class="photo-card r3"><img src="assets/2024.jpg"><figcaption>2024 — another chapter</figcaption></figure>
+<figure class="photo-card r4"><img src="assets/2025.jpg"><figcaption>2025 — memories in motion</figcaption></figure>
+<figure class="photo-card r5"><img src="assets/2026.jpg"><figcaption>2026 — the newest frame</figcaption></figure>
+<figure class="photo-card r6"><img src="assets/extra1.jpg"><figcaption>And the story keeps going…</figcaption></figure>
+<figure class="photo-card r6"><img src="assets/extra2.jpg"><figcaption>And the story keeps going…</figcaption></figure>
+<figure class="photo-card r6"><img src="assets/extra3.jpg"><figcaption>And the story keeps going…</figcaption></figure>
+<figure class="photo-card r6"><img src="assets/extra4.jpg"><figcaption>And the story keeps going…</figcaption></figure>
+
+</div></div></section>
+
+<section class="quote"><div class="quote-inner"><div class="quote-mark">“</div><h2>May the next chapter be even more beautiful than the ones we've already lived.</h2><p>More laughter. More adventures. More photographs. More reasons to celebrate you.</p></div></section>
+
+<section class="song"><div class="song-inner">
+<div class="song-disc"><i></i></div>
+<div class="song-links">
+<a class="song-btn" href="assets/song.mp3" id="songPlay">▶ Play on this page</a>
+<a class="song-btn" href="https://www.youtube.com/watch?v=5HoDmt1c7JM" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+</div>
+<p class="song-note">To play it right here, drop your own copy of the song as <b>assets/song.mp3</b> — the button above will pick it up automatically.</p>
+<audio id="songAudio" src="assets/song.mp3" preload="none"></audio>
+</div></section>
+
+<section class="screen end"><div class="end-photo" id="endPhoto"></div><div class="final">
+<h2><small>One last thing</small>Happy Birthday<br><span class="italic">Angel & Sweetie</span> <span class="heart">♥</span></h2>
+<p>Keep smiling. Keep shining. Keep being the person who makes ordinary moments feel worth remembering.</p>
+<button class="surprise" id="surprise">Open the final surprise ✨</button>
+</div></section>
+<footer><span>MADE WITH MEMORIES</span><span>2020 — 2026</span></footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const $=s=>document.querySelector(s);
+const isTouch=matchMedia("(pointer:coarse)").matches;
+if(!isTouch){const m=$("#mouse");addEventListener("mousemove",e=>gsap.to(m,{x:e.clientX,y:e.clientY,duration:.15}));addEventListener("mousemove",e=>{gsap.to("#heroPhoto",{x:(e.clientX-innerWidth/2)*-.012,y:(e.clientY-innerHeight/2)*-.012,duration:1.2});gsap.to(".floating",{x:(e.clientX-innerWidth/2)*.008,y:(e.clientY-innerHeight/2)*.008,duration:1.3,stagger:.03})})}
+gsap.from(".hero h1 span",{y:120,opacity:0,stagger:.13,duration:1.25,ease:"power4.out"});
+gsap.from(".hero p",{y:30,opacity:0,duration:1,delay:.7});
+gsap.to("#heroPhoto",{scale:1.18,yPercent:9,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:1}});
+gsap.to(".hero-content",{yPercent:-20,opacity:.2,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:1}});
+gsap.from(".intro-grid",{y:70,opacity:0,duration:1,scrollTrigger:{trigger:".intro",start:"top 75%",toggleActions:"play none none reverse"}});
+
+const data=[
+["2020","Where it all began.","The first year. The first photographs. The beginning of a story that had no idea how far it would travel."],
+["2021","Distance couldn't stop the memories.","Different days, different screens, same people — and the same ridiculous amount of things to remember."],
+["2022","Back where we belong.","The world opened up again, and ordinary days became the kind you wanted to keep."],
+["2023","More stories, less explanation.","By now, the friendship had its own language. A look, a laugh, one photograph — enough."],
+["2024","The archive got bigger.","Another year, another collection of moments that somehow became impossible to forget."],
+["2025","Still writing.","And here we are, still adding pages, still finding reasons to laugh."]
+];
+const year=$("#year"), title=$("#storyTitle"), text=$("#storyText"), chapter=$("#chapter"), dots=[...document.querySelectorAll("#rail b")];
+let last=-1;
+ScrollTrigger.create({trigger:".story",start:"top top",end:"bottom bottom",onUpdate:s=>{
+ let i=Math.min(5,Math.floor(s.progress*6));
+ if(i!==last){last=i;let d=data[i];gsap.to([year,title,text],{opacity:0,y:15,duration:.18,onComplete:()=>{year.textContent=d[0];title.textContent=d[1];text.textContent=d[2];chapter.textContent=String(i+1).padStart(2,"0");dots.forEach((x,j)=>x.classList.toggle("on",j===i));gsap.to([year,title,text],{opacity:1,y:0,duration:.45})}})}
+}});
+gsap.to("#storyImage",{scale:1.13,xPercent:-4,ease:"none",scrollTrigger:{trigger:".story",start:"top top",end:"bottom bottom",scrub:1}});
+gsap.to(".f1",{y:-130,rotation:12,ease:"none",scrollTrigger:{trigger:".story",start:"top top",end:"bottom bottom",scrub:1}});
+gsap.to(".f2",{y:120,rotation:-13,ease:"none",scrollTrigger:{trigger:".story",start:"top top",end:"bottom bottom",scrub:1}});
+
+const track=$("#track");
+function dist(){return Math.max(0,track.scrollWidth-innerWidth+innerWidth*.16)}
+if(!isTouch)gsap.to(track,{x:()=>-dist(),ease:"none",scrollTrigger:{trigger:".film",start:"top top",end:"bottom bottom",scrub:1,invalidateOnRefresh:true}});
+gsap.from(".quote-inner",{y:80,opacity:0,scale:.96,scrollTrigger:{trigger:".quote",start:"top 75%",end:"center center",scrub:1}});
+gsap.from(".song-inner",{y:60,opacity:0,scale:.96,scrollTrigger:{trigger:".song",start:"top 75%",end:"center center",scrub:1}});
+
+const songAudio=$("#songAudio"), songPlay=$("#songPlay");
+let songPlaying=false;
+songPlay.addEventListener("click",e=>{
+  e.preventDefault();
+  if(!songPlaying){
+    songAudio.play().then(()=>{songPlaying=true;songPlay.textContent="⏸ Playing…"}).catch(()=>{
+      songPlay.textContent="Add assets/song.mp3 to enable this ↗";
+      setTimeout(()=>songPlay.textContent="▶ Play on this page",2600);
+    });
+  }else{
+    songAudio.pause();songAudio.currentTime=0;songPlaying=false;songPlay.textContent="▶ Play on this page";
+  }
+});
+songAudio.addEventListener("ended",()=>{songPlaying=false;songPlay.textContent="▶ Play on this page"});
+gsap.to("#endPhoto",{scale:1.1,ease:"none",scrollTrigger:{trigger:".end",start:"top bottom",end:"bottom top",scrub:1}});
+gsap.from(".final",{y:80,opacity:0,duration:1,scrollTrigger:{trigger:".end",start:"top 75%",toggleActions:"play none none reverse"}});
+
+// Lightweight generated birthday melody via Web Audio — no external MP3 needed.
+let audioCtx=null, playing=false, timer=null;
+const notes=[261.63,329.63,392,523.25,392,329.63,293.66,349.23,440,523.25,440,349.23];
+function playNote(freq,when,len=.32){const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=freq;g.gain.setValueAtTime(.0001,when);g.gain.exponentialRampToValueAtTime(.09,when+.03);g.gain.exponentialRampToValueAtTime(.0001,when+len);o.connect(g).connect(audioCtx.destination);o.start(when);o.stop(when+len+.04)}
+function music(){if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();let t=audioCtx.currentTime+.05;notes.forEach((n,i)=>playNote(n,t+i*.42,.36));timer=setTimeout(()=>{if(playing)music()},notes.length*420)}
+$("#audio").onclick=()=>{if(!playing){playing=true;music();$("#audio").innerHTML="◼"}else{playing=false;clearTimeout(timer);if(audioCtx)audioCtx.suspend();$("#audio").innerHTML="♫"}};
+
+$("#surprise").onclick=()=>{
+  if(!playing){playing=true;music();$("#audio").innerHTML="◼"}
+  const emojis=["✨","♥","🎈","✦","🎉"];
+  for(let i=0;i<55;i++){let s=document.createElement("span");s.textContent=emojis[Math.floor(Math.random()*emojis.length)];s.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:105vh;z-index:2000;font-size:${18+Math.random()*30}px;pointer-events:none`;
+    document.body.appendChild(s);gsap.to(s,{y:-innerHeight*(.9+Math.random()*.7),x:(Math.random()-.5)*360,rotation:(Math.random()-.5)*720,duration:2.5+Math.random()*2.2,ease:"power2.out",onComplete:()=>s.remove()});
+  }
+};
+window.addEventListener("load",()=>setTimeout(()=>ScrollTrigger.refresh(),300));
+</script>
+<script>(()=>{const s=document.getElementById("birthdaySong"),b=document.getElementById("musicToggle");if(!s)return;s.volume=.55;const play=()=>{const p=s.play();if(p?.catch)p.catch(()=>{})};const pause=()=>s.pause();const g=()=>{play();["pointerdown","touchstart","keydown"].forEach(e=>window.removeEventListener(e,g))};["pointerdown","touchstart","keydown"].forEach(e=>window.addEventListener(e,g,{passive:true}));document.querySelectorAll("#startFilm,#startButton,.start-button,.start-btn,[data-start-film]").forEach(x=>x.addEventListener("click",play));b?.addEventListener("click",e=>{e.stopPropagation();if(s.paused){play();b.textContent="♫";b.classList.remove("muted")}else{pause();b.textContent="🔇";b.classList.add("muted")}});s.addEventListener("play",()=>{if(b){b.textContent="♫";b.classList.remove("muted")}});s.addEventListener("pause",()=>{if(b){b.textContent="🔇";b.classList.add("muted")}});play()})()</script></body></html>
